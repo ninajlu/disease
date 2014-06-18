@@ -1,0 +1,59 @@
+<template name="postSubmit">
+  <form class="main">
+    <div class="control-group">
+        <label class="control-label" for="location">Location</label>
+        <div class="controls">
+            <input name="location" type="text" value="{{location}}" placeholder="Location"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="lat">Latitude</label>
+        <div class="controls">
+            <input name="lat" type="text" value="{{lat}}" placeholder="Latitude"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="lng">Longitude</label>
+        <div class="controls">
+            <input name="lng" type="text" value="{{lng}}" placeholder="Longitude"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="strain">Strain</label>
+        <div class="controls">
+            <input name="strain" type="text" value="{{strain}}" placeholder="Strain"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="drug">Drug Resistance</label>
+        <div class="controls">
+            <input name="drug" type="text" value="{{drug}}" placeholder="Drug Resistance"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="treatment">Treatment</label>
+        <div class="controls">
+            <input name="treatment" type="text" value="{{treatment}}" placeholder="Treatment"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="notes">Notes</label>
+        <div class="controls">
+            <input name="notes" type="text" value="{{notes}}" placeholder="Notes"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="cases">Number of Cases</label>
+        <div class="controls">
+            <input name="cases" type="text" value="{{cases}}" placeholder="Number of Cases"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+    </div>
+  </form>
+</template>
