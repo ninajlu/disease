@@ -115,11 +115,14 @@ body {
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1); }
 
-      #map-canvas {
+      html,body, #map-canvas {
         height: 500px;
         margin: 10px;
         padding: 10px;
       }
+      #map-canvas img { max-width: none;
+      overflow: visible }
+
       #panel {
         top: 5px;
         left: 50%;

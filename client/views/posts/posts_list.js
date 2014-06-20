@@ -8,9 +8,9 @@ Template.postsList.helpers({
   }
 });
 Template.postsList.events({
-	'click .toggleHeatMap': function (eve) {
+	'click .toggleHeatmap': function (eve) {
 		console.log("heee");
-		      gmaps.toggleHeatmap();
+		gmaps.toggleHeatmap();
     },
     'click .changeGradient': function (eve) {
       gmaps.changeGradient();
@@ -23,6 +23,6 @@ Template.postsList.events({
     }
 });
 Template.postsList.rendered = function(){
-        gmaps.initialize();
+        gmaps.initialize(this.data);
 };
 

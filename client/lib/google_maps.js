@@ -1,9 +1,9 @@
 gmaps={
   map:null,
-  pointarray:[],
+  pointArray:[],
   heatmap:null,
   taxiData: [],
-  initialize:function() {
+  initialize:function(posts) {
     var mapOptions = {
       zoom: 13,
       center: new google.maps.LatLng(37.774546, -122.433523),
@@ -12,7 +12,9 @@ gmaps={
 
     this.map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-    this.taxiData= [new google.maps.LatLng(37.782551, -122.445368),
+          console.log("hey1");
+          console.log(posts);
+this.taxiData= [new google.maps.LatLng(37.782551, -122.445368),
     new google.maps.LatLng(37.782745, -122.444586),
     new google.maps.LatLng(37.782842, -122.443688),
     new google.maps.LatLng(37.782919, -122.442815),
@@ -33,6 +35,18 @@ gmaps={
     new google.maps.LatLng(37.784701, -122.439902),
     new google.maps.LatLng(37.784965, -122.439938),
     new google.maps.LatLng(37.785010, -122.439947)];
+    posts.posts.rewind();
+    posts=posts.posts.map(function(post, index, cursor) {
+      post._rank = index;
+      return post;
+    });
+    console.log(posts);
+    var p;
+    for(p in posts){
+      post=posts[p];
+      this.taxiData.push(new google.maps.LatLng(post.lat,post.lng));
+    }
+    
     this.pointArray = new google.maps.MVCArray(this.taxiData);
 
     this.heatmap = new google.maps.visualization.HeatmapLayer({
@@ -40,12 +54,10 @@ gmaps={
     });
 
     this.heatmap.setMap(this.map);
-    console.log("hey11");
     
   },
 
   toggleHeatmap:function() {
-    console.log("hey");
     this.heatmap.setMap(this.heatmap.getMap() ? null : this.map);
   },
 
