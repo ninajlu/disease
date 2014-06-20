@@ -7,3 +7,22 @@ Template.postsList.helpers({
     });
   }
 });
+Template.postsList.events({
+	'click .toggleHeatMap': function (eve) {
+		console.log("heee");
+		      gmaps.toggleHeatmap();
+    },
+    'click .changeGradient': function (eve) {
+      gmaps.changeGradient();
+    },
+    'click .changeRadius': function (eve) {
+      gmaps.changeRadius();
+    },
+    'click .changeOpacity': function (eve) {
+      gmaps.changeOpacity();
+    }
+});
+Template.postsList.rendered = function(){
+        gmaps.initialize();
+};
+

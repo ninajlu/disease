@@ -14,7 +14,6 @@ Meteor.publish('comments', function(postId) {
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId});
 });
-
 if(Meteor.isServer){ 
 	Meteor.methods({
 		'geocode': function geocode (postID, location){
@@ -46,7 +45,7 @@ if(Meteor.isServer){
 			console.log(postID);*/
 			Posts.update(postID,{$set:postProperties}, function(err){
 				console.log(err);
-				consolge.log(Posts.find(postID));
+				console.log(Posts.find(postID));
 			});
 
 		}

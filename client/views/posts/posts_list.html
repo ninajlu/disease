@@ -1,4 +1,11 @@
 <template name="postsList">
+    <div id="panel">
+    	<input type="button" class="toggleHeatmap" value="Toggle Heatmap"/>
+    	<input type="button" class="changeGradient" value="Change gradient"/>
+    	<input type="button" class="changeRadius" value="Change radius"/>
+    	<input type="button" class="changeOpacity" value="Change opacity"/>
+    </div>
+    <div id="map-canvas"></div>
   <div class="posts">
     {{#each postsWithRank}}
       {{> postItem}}

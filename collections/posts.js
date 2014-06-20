@@ -7,7 +7,7 @@ Posts.allow({
 Posts.deny({
   update: function(userId, post, fieldNames) {
     // may only edit the following two fields:
-    return (_.without(fieldNames, 'lat','lng', 'location', 'notes','drug','cases', 'treatment').length > 0);
+    return (_.without(fieldNames, 'lat','lng', 'location', 'strain','notes','drug','cases', 'treatment').length > 0);
   }
 });
 
