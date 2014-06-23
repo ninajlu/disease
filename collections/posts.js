@@ -31,7 +31,7 @@ Meteor.methods({
     }*/
     console.log(postAttributes.location);
     // pick out the whitelisted keys
-    var post = _.extend(_.pick(postAttributes,'location','notes', 'drug', 'cases','treatment'), {
+    var post = _.extend(_.pick(postAttributes,'location','strain','notes', 'drug', 'cases','treatment'), {
       userId: user._id, 
       lat:0,
       lng:0,

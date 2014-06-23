@@ -5,7 +5,7 @@ gmaps={
   taxiData: [],
   initialize:function(posts) {
     var mapOptions = {
-      zoom: 13,
+      zoom: 4,
       center: new google.maps.LatLng(37.774546, -122.433523),
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };

@@ -10,7 +10,11 @@ iron-router
 spin
 accounts-ui-bootstrap-dropdown
 accounts-password
-iron-router-progress
 
 blaze-layout
 npm
+moment
+twilio-meteor
+page-js-ie-support
+HTML5-History-API
+router
