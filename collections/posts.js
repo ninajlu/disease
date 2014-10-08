@@ -1,4 +1,5 @@
 Posts = new Meteor.Collection('posts');
+
 Posts.allow({
   update: ownsDocument,
   remove: ownsDocument
@@ -7,7 +8,7 @@ Posts.allow({
 Posts.deny({
   update: function(userId, post, fieldNames) {
     // may only edit the following two fields:
-    return (_.without(fieldNames, 'lat','lng', 'location', 'strain','notes','drug','cases', 'treatment').length > 0);
+    return (_.without(fieldNames, 'lat', 'lng', 'location', 'strain', 'notes', 'drug', 'cases', 'treatment').length > 0);
   }
 });
 
@@ -31,10 +32,10 @@ Meteor.methods({
     }*/
     console.log(postAttributes.location);
     // pick out the whitelisted keys
-    var post = _.extend(_.pick(postAttributes,'location','strain','notes', 'drug', 'cases','treatment'), {
+    var post = _.extend(_.pick(postAttributes,'location', 'strain', 'notes', 'drug', 'cases', 'treatment'), {
       userId: user._id, 
-      lat:0,
-      lng:0,
+      lat: 0,
+      lng: 0,
       author: user.username, 
       submitted: new Date().getTime(),
       edited: new Date().getTime(),
